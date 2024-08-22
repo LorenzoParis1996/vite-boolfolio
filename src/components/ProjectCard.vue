@@ -5,18 +5,23 @@ export default{
     data() {
         return{
             projects: [],
+            //currentPage: 1,
+            
+            
         }
     },
     methods: {
-        getProjects() {
+        getProjects(page = 1) {
             axios.get('http://127.0.0.1:8000/api/projects/', {
                 params: {
-                    
+                    page:page 
                 }
             })
                 .then((response) => {
                     console.log(response.data.results.data);
                     this.projects = response.data.results.data;
+                    //this.projects.push(...response.data.results.data);
+                    //this.currentPage = response.data.results.page;
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -43,6 +48,10 @@ export default{
     <p class="card-text">{{ project.description }}</p>
   </div>
 </div>
+
+<!--<div>
+    <button class="btn btn-primary btn-lg" @click.prevent="getProjects(currentPage + 1)">Show more</button>
+</div>-->
 </template>
 
 <style lang="scss" scoped>
