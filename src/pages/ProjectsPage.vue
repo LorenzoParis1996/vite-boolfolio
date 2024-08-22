@@ -1,6 +1,7 @@
 <script>
 
-import ProjectCard from './ProjectCard.vue';
+import ProjectCard from '../components/ProjectCard.vue';
+
 
 
 export default {
@@ -11,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <h1>Content</h1>
+  <h1>Projects</h1>
   <ProjectCard/>
 </template>
 
