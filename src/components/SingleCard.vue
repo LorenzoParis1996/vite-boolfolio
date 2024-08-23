@@ -21,10 +21,10 @@ export default{
             typeof: String,
             required:true
         },
-        //type:{
-           // typeof: String,
-            //required:true
-     //   },
+        type:{
+            typeof: String,
+            required:true
+        },
         technologies:{
             typeof: Array,
             required:true
